@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>hotpicz</title>
+    <style>
+        @keyframes unblur {
+			from {
+				filter: blur(1rem);
+			}
+			to {
+				filter: blur(0);
+			}
+		}
+		.explicit {
+			filter: blur(1rem);
+		}
+		.explicit:hover {
+			animation: 0.3s forwards unblur;
+		}
+        #images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+            grid-column-gap: 4px;
+            grid-row-gap: 4px;
+            justify-content: center;
+            align-items: center;
+        }
+        #link {
+            background-color: white;
+        }
+        #images img {
+            display: block;
+            margin: 0 auto;
+            width: 20em;
+            height: 20em;
+            object-fit: contain;
+        }
+        .moar {
+            width: 20em;
+            height: 20em;
+            justify-content: center;
+            align-items: center;
+            background-color: lightblue;
+            user-select: none;
+            cursor: pointer;
+            margin: 0 auto;
+        }
+        .moar a {
+            font-size: 2em;
+            font-family: sans-serif;
+        }
+        body {
+            background-color: #0047ab;
+        }
+        #logincontainer {
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #loginpage {
+            font-family: sans-serif;
+            text-align: center;
+            color: white;
+            font-size: 1.5em;
+            width: 10em;
+        }
+        #loginpage div {
+            margin: 0.2em;
+        }
+        #signin {
+            background-color: lightblue;
+            margin: 1em !important;
+            border-radius: 0.4em;
+            color: black;
+        }
+        #title {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div id="logincontainer" style="display: none;">
+        <div id="loginpage">
+            <div id="title">hotpicz</div>
+            <div><label for="login">Login:</label></div>
+            <div><input type="text" id="login" name="login"></div>
+            <div><label for="pass">Password:</label></div>
+            <div><input type="password" id="pass" name="pass"></div>
+            <div id="signin">SIGN IN</div>
+        </div>
+    </div>
+    <div id="images">
+        <div class="moar" style="display: none;"><a>more...</a></div>
+    </div>
+	<script src="main.js"></script>
+</body>
+</html>
