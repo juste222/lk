@@ -47,9 +47,9 @@ function login() {
 
 function displayImages() {
     if (cursor !== undefined) {
-        settings = {includeNsfw: true, limit: 100, cursor: cursor}
+        settings = {limit: 100, cursor: cursor}
     } else {
-        settings = {includeNsfw: true, limit: 100}
+        settings = {limit: 100}
     }
     agent.app.bsky.unspecced.getPopular(settings).then(response => {response.data.feed.forEach(thing => {
         cursor = response.data.cursor
